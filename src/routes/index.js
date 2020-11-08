@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import DashboardLayout from '../views/layouts/DashboardLayout'
 
 // Some folks find value in a centralized route config.
 // A route config is just data. React is great at mapping
@@ -14,6 +15,10 @@ import {
 // with `path` and `component` props, ordered the same
 // way you'd do inside a `<Switch>`.
 const routes = [
+  {
+    path: "/",
+    component: DashboardLayout
+  },
   {
     path: "/sandwiches",
     component: Sandwiches
@@ -37,22 +42,11 @@ const routes = [
 export default function RouteConfigExample() {
   return (
     <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/tacos">Tacos</Link>
-          </li>
-          <li>
-            <Link to="/sandwiches">Sandwiches</Link>
-          </li>
-        </ul>
-
         <Switch>
           {routes.map((route, i) => (
             <RouteWithSubRoutes key={i} {...route} />
           ))}
         </Switch>
-      </div>
     </Router>
   );
 }
