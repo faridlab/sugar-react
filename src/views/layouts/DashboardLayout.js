@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
   appBarShift: {
     marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
+    width: `calc(100%)`,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
@@ -98,7 +98,8 @@ export default function MiniDrawer() {
   };
 
   const toggleDrawer = () => {
-    console.log(1231231);
+    const openStatus = !open
+    setOpen(openStatus)
   };
 
   return (
@@ -109,6 +110,7 @@ export default function MiniDrawer() {
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
+        drawertoggle={toggleDrawer}
       />
       <Drawer
         variant="permanent"
