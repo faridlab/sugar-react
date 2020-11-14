@@ -15,6 +15,8 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 
+const drawerWidth = 240;
+
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -52,10 +54,10 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
     marginRight: theme.spacing(2),
-    marginLeft: 0,
+    marginLeft: 100,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
+      marginLeft: theme.spacing(12),
       width: 'auto',
     },
   },
@@ -177,16 +179,13 @@ export default function PrimarySearchAppBar(props) {
     </Menu>
   );
 
-  const toggleDrawer = () => {
-    console.log(props);
-    // props.open = !props.open
-    // console.log(props);
-  }
+  const { position, className, drawertoggle } = props
 
   return (
     <div>
       <AppBar
-        {...props}
+        position={position}
+        className={className}
       >
         <Toolbar>
           <IconButton
@@ -194,12 +193,12 @@ export default function PrimarySearchAppBar(props) {
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
-            onClick={toggleDrawer}
+            onClick={drawertoggle}
           >
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
+            Materialux
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
