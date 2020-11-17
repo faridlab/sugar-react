@@ -6,6 +6,8 @@ import {
   Link
 } from "react-router-dom";
 import DashboardLayout from '../views/layouts/DashboardLayout'
+import loadable from "@loadable/component";
+import Loading from "../views/pages/Loading";
 
 // Some folks find value in a centralized route config.
 // A route config is just data. React is great at mapping
@@ -17,7 +19,7 @@ import DashboardLayout from '../views/layouts/DashboardLayout'
 const routes = [
   {
     path: "/",
-    component: DashboardLayout
+    component: loadable(() => import('../views/layouts/DashboardLayout'), { fallback: <Loading /> })
   },
   {
     path: "/sandwiches",

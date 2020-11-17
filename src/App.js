@@ -1,12 +1,7 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import Routes from './routes'
+import Routers from './router'
+import routes from './router/routes'
 
 export default function App() {
-  return <Routes />
+  return <Routers routes={routes} />
 }
