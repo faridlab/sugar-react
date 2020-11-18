@@ -1,25 +1,30 @@
-# Create React App example
+# Sugar React
+Reactjs (Material-UI) Project Skeleton
 
-## How to use
-
-Download the example [or clone the repo](https://github.com/mui-org/material-ui):
-
-```sh
-curl https://codeload.github.com/mui-org/material-ui/tar.gz/master | tar -xz --strip=2 material-ui-master/examples/create-react-app
-cd create-react-app
-```
-
-Install it and run:
-
-```sh
-npm install
-npm start
-```
-
-or:
-
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/mui-org/material-ui/tree/master/examples/create-react-app)
-
-## The idea behind the example
-
-This example demonstrates how you can use [Create React App](https://github.com/facebookincubator/create-react-app).
+## Todo
+- [x] Main layout dashboard Material-UI
+- [x] React router more configurable (configuration)
+- [ ] Mockup CRUD page component
+  - [ ] List page
+  - [ ] Create page
+  - [ ] Show/Detail page
+  - [ ] Update page
+  - [ ] Trash page
+  - [ ] Trashed detail page
+- [ ] Store Management (Redux)
+  - [ ] Actions
+    - [ ] fetch       (GET: `/${collection}`)
+    - [ ] create      (POST: `/${collection}`)
+    - [ ] detail      (GET: `/${collection}/:id`)
+    - [ ] update      (PUT: `/${collection}/:id`)
+    - [ ] patch       (PATCH: `/${collection}/:id`)
+    - [ ] destroy     (DELETE: `/${collection}/:type`)
+    - [ ] hardDelete  (DELETE: `/${collection}/:type/delete`)
+    - [ ] trash       (GET: `/${collection}/trash`)
+    - [ ] trashed     (GET: `/${collection}/:id/trashed`)
+    - [ ] restore     (POST: `/${collection}/:type/restore`)
+  - [ ] State
+  - [ ] Getters
+  - [ ] Mutations
+- [ ] Form Components
+  - [ ] Input
