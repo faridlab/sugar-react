@@ -1,3 +1,42 @@
+# Sugar React
+Reactjs ([Material-UI](https://material-ui.com/)) Project Skeleton
+
+## Todo
+- [ ] Main layout dashboard Material-UI
+- [ ] React router more configurable (configuration)
+- [ ] Mockup CRUD page component
+  - [ ] List page
+  - [ ] Create page
+  - [ ] Show/Detail page
+  - [ ] Update page
+  - [ ] Trash page
+  - [ ] Trashed detail page
+- [ ] Store Management (Redux)
+  - [ ] Actions
+    - [ ] fetch       (GET: `/${collection}`)
+    - [ ] create      (POST: `/${collection}`)
+    - [ ] detail      (GET: `/${collection}/:id`)
+    - [ ] update      (PUT: `/${collection}/:id`)
+    - [ ] patch       (PATCH: `/${collection}/:id`)
+    - [ ] delete      (DELETE: `/${collection}/:type`) --note: soft delete item(s)
+    - [ ] empty       (DELETE: `/${collection}/:type/empty`) --note: empty deleted item(s)
+    - [ ] trash       (GET: `/${collection}/trash`)
+    - [ ] trashed     (GET: `/${collection}/:id/trashed`)
+    - [ ] restore     (POST: `/${collection}/:type/restore`)
+    - [ ] bulk        (POST: `/${collection}/bulk`) --note: bulk create item(s)
+    - [ ] upcreate    (POST: `/${collection}/upcreate`) --note: update or create
+  - [ ] State
+  - [ ] Getters
+  - [ ] Mutations
+- [ ] Form Components
+  - [ ] Input
+  - [ ] Select
+  - [ ] Textarea
+  - [ ] Switch
+  - [ ] Checkbox
+  - [ ] Radio
+  - [ ] Datepicker
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
