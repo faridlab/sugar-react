@@ -1,5 +1,5 @@
 # Sugar React
-Reactjs ([Material-UI](https://material-ui.com/)) Project Skeleton
+Reactjs ([Material-UI](https://mui.com/)) Project Skeleton
 
 ## Todo
 - [ ] Main layout dashboard Material-UI
