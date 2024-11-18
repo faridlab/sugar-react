@@ -402,34 +402,59 @@ export default function DashboardLayout() {
             flexGrow: 1,
             display: 'flex',
             flexDirection: 'column',
-            [`& .${listItemButtonClasses.root}`]: {
-              gap: 1.5,
-            },
           }}
         >
+        <List>
+          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+              <ListItemButton
+                sx={[
+                  {
+                    minHeight: 48,
+                    px: 2.5,
+                  },
+                  open
+                    ? {
+                        justifyContent: 'initial',
+                      }
+                    : {
+                        justifyContent: 'center',
+                      },
+                ]}
+              >
+                <ListItemIcon
+                  sx={[
+                    {
+                      minWidth: 0,
+                      justifyContent: 'center',
+                    },
+                    open
+                      ? {
+                          mr: 3,
+                        }
+                      : {
+                          mr: 'auto',
+                        },
+                  ]}
+                >
+                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                </ListItemIcon>
+                <ListItemText
+                  primary={text}
+                  sx={[
+                    open
+                      ? {
+                          opacity: 1,
+                        }
+                      : {
+                          opacity: 0,
+                        },
+                  ]}
+                />
+              </ListItemButton>
+            </ListItem>
+          ))}
 
-        <List
-          sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
-          component="nav"
-          aria-labelledby="nested-list-subheader"
-          subheader={
-            <ListSubheader component="div" id="nested-list-subheader">
-              Nested List Items
-            </ListSubheader>
-          }
-        >
-          <ListItemButton>
-            <ListItemIcon>
-              <SendIcon />
-            </ListItemIcon>
-            <ListItemText primary="Sent mail" />
-          </ListItemButton>
-          <ListItemButton>
-            <ListItemIcon>
-              <DraftsIcon />
-            </ListItemIcon>
-            <ListItemText primary="Drafts" />
-          </ListItemButton>
           <ListItemButton onClick={handleClick}>
             <ListItemIcon>
               <InboxIcon />
@@ -438,29 +463,17 @@ export default function DashboardLayout() {
             {openTree ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
           <Collapse in={openTree} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding dense >
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemIcon>
-                  <StarBorder />
-                </ListItemIcon>
+            <List component="div" disablePadding >
+              <ListItemButton sx={{ pl: 9}}>
                 <ListItemText primary="Starred" />
               </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemIcon>
-                  <StarBorder />
-                </ListItemIcon>
+              <ListItemButton sx={{ pl: 9}}>
                 <ListItemText primary="Starred" />
               </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemIcon>
-                  <StarBorder />
-                </ListItemIcon>
+              <ListItemButton sx={{ pl: 9}}>
                 <ListItemText primary="Starred" />
               </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemIcon>
-                  <StarBorder />
-                </ListItemIcon>
+              <ListItemButton sx={{ pl: 9}}>
                 <ListItemText primary="Starred" />
               </ListItemButton>
             </List>
