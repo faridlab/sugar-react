@@ -67,7 +67,7 @@ export default function PageContainer() {
           justifyContent: 'space-between',
         }}
       >
-        <Typography variant="h4" component="h2">
+        <Typography variant="h5" component="h2">
           Orders
         </Typography>
         <Stack
