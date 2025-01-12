@@ -2,13 +2,12 @@ import {
   useRef,
   Dispatch,
   SetStateAction,
-  useState,
-  useEffect
+  useState
 } from "react"
 
 import {
   GridActionsCellItem,
-  GridEnrichedColDef,
+  GridColDef,
   GridEventListener,
   GridRowId,
   GridRowModel,
@@ -105,7 +104,7 @@ const useActionsPresenter = (props: ActionsProps) => {
     return updatedRow
   }
 
-  const actions: GridEnrichedColDef = {
+  const actions: GridColDef = {
     field: 'actions',
     type: 'actions',
     getActions: ({id}) => {
