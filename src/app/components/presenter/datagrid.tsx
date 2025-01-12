@@ -1,7 +1,8 @@
 import { FunctionComponent, useState } from 'react'
 import {
   DataGrid,
-  GridColDef
+  GridColDef,
+  GridEventListener
 } from '@mui/x-data-grid'
 
 export type Params = {
@@ -18,7 +19,9 @@ type PropsType = {
   rows: any[];
   columns: GridColDef[];
   isLoading: boolean;
-  props?: Record<string, any>, // used for dynamic props component
+  onPaginationChanged: (params: any) => void;
+  onCellClick?: GridEventListener<'cellClick'>;
+  props?: Record<string, any>;
 }
 
 const DatagridPresenter: FunctionComponent<PropsType> = (props: PropsType) => {
