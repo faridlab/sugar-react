@@ -1,19 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import './index.css';
-import { StyledEngineProvider } from '@mui/material/styles';
-import DashboardLayout from './shared/layouts/DashboardLayout';
+import { BrowserRouter } from "react-router";
 import reportWebVitals from './reportWebVitals';
+import Routers from './app/routes';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <StyledEngineProvider injectFirst>
-      <DashboardLayout />
-    </StyledEngineProvider>
-  </React.StrictMode>
+  <BrowserRouter>
+    <React.StrictMode>
+      <Routers />
+    </React.StrictMode>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
