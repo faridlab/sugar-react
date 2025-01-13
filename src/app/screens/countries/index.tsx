@@ -175,6 +175,7 @@ const CollectionPage = () => {
         ToolbarActions={ToolbarActions}
       >
         <DatagridPresenter
+          onPaginationChanged={() => {}} // TODO: add this
           columns={columns}
           rows={rows}
           rowCount={rowCount}
