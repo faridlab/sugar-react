@@ -22,7 +22,6 @@
     "jsx": "react-jsx",
     "paths": {
       "@/*": ["./*"],
-      "@toolpad/core/*": ["../node_modules/@toolpad/core/*"],
       "@app/*": ["./app/*"],
       "@component/*": ["./app/components/*"],
       "@service/*": ["./app/services/*"],
@@ -40,6 +39,7 @@
     }
   },
   "include": [
-    "src"
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
   ]
 }
