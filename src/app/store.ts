@@ -9,7 +9,7 @@ import resourceReducer from './stores/resources'
 import authReducer from './stores/auth'
 
 // SERVICES
-import { apiRequest } from '@service/api/apiRequest'
+import { apiRequest } from './services/api/apiRequest'
 
 export const store = configureStore({
   reducer: {

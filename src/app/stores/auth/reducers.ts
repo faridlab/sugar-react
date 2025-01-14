@@ -4,7 +4,7 @@ import {
   getCookie,
   hasCookie,
   removeCookie
-} from '@app/utils/cookies'
+} from '../../utils/cookies'
 
 export type InitState = {
   user: Record<string, any> | null,

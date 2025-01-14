@@ -1,7 +1,7 @@
 import {
   createAsyncThunk,
 } from '@reduxjs/toolkit'
-import { getCookie } from '@app/utils/cookies'
+import { getCookie } from '../../utils/cookies'
 
 import {
   get,
@@ -9,7 +9,7 @@ import {
   update as updateRequest,
   patch as patchRequest,
   del as deleteRequest,
-} from '@device/repositories/apiRequest'
+} from '../../../device/repositories/apiRequest'
 
 import { RequestType, RequestDataType } from '@device/utils/axios'
 

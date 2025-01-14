@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { RequestType, RequestDataType } from '@device/utils/axios'
-import { getCookie } from '@app/utils/cookies'
+import { getCookie } from '../../utils/cookies'
 
 const baseUrl = process.env.ENDPOINT_API_URL
 export const apiRequest = createApi({
