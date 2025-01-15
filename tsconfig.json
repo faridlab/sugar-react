@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "src/",
     "target": "es5",
     "lib": [
       "dom",
@@ -21,21 +20,21 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "@/*": ["./*"],
-      "@app/*": ["./app/*"],
-      "@component/*": ["./app/components/*"],
-      "@service/*": ["./app/services/*"],
-      "@routes/*": ["./app/routes/*"],
-      "@i18n/*": ["./app/i18n/*"],
-      "@store/*": ["./app/store/*"],
-      "@domain/*": ["./domain/*"],
-      "@device/*": ["./device/*"],
-      "@assets/*": ["./assets/*"],
-      "@fonts/*": ["./assets/fonts/*"],
-      "@images/*": ["./assets/images/*"],
-      "@theme/*": ["./theme/*"],
-      "@shared/*": ["./shared/*"],
-      "@data/*": ["./data/*"],
+      "@/*": ["./src/*"],
+      "@app/*": ["./src/app/*"],
+      "@component/*": ["./src/app/components/*"],
+      "@service/*": ["./src/app/services/*"],
+      "@routes/*": ["./src/app/routes/*"],
+      "@i18n/*": ["./src/app/i18n/*"],
+      "@store/*": ["./src/app/store/*"],
+      "@domain/*": ["./src/domain/*"],
+      "@device/*": ["./src/device/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@fonts/*": ["./src/assets/fonts/*"],
+      "@images/*": ["./src/assets/images/*"],
+      "@theme/*": ["./src/theme/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@data/*": ["./src/data/*"],
     }
   },
   "include": [
