@@ -5,25 +5,22 @@ import {
 
 import {
   API_USER_LOGIN
-} from '@data/constants'
-import { RequestDataType } from '@device/utils/axios'
-import { usePostMutation } from '@app/services/api/apiRequest'
+} from '../../data/constants'
+import { RequestDataType } from '../../device/utils/axios'
+import { usePostMutation } from '../services/api/apiRequest'
 
 import {
   useAppDispatch,
   useAppSelector,
-} from '@app/hooks'
+} from '../../app/hooks'
 
 import {
-  selectResource
-} from '@app/stores/auth'
-
-import {
+  selectResource,
   setUser,
   setToken,
   checkToken,
   userLogout
-} from '@app/stores/auth'
+} from '../stores/auth'
 
 function useUserAuthenticate() {
   const [isLoggedIn, setLoggedIn] = useState<boolean>(false)
