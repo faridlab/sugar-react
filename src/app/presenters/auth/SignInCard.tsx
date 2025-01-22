@@ -2,6 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import MuiCard from '@mui/material/Card';
+import useUserAuthenticate from '../../hooks/userAuthenticate'
 import Checkbox from '@mui/material/Checkbox';
 import Divider from '@mui/material/Divider';
 import FormLabel from '@mui/material/FormLabel';
@@ -13,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import ForgotPassword from './ForgotPassword';
 import { GoogleIcon, FacebookIcon, SitemarkIcon } from './CustomIcons';
+import { useNavigate } from "react-router"
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
@@ -38,6 +40,8 @@ export default function SignInCard() {
   const [passwordError, setPasswordError] = React.useState(false);
   const [passwordErrorMessage, setPasswordErrorMessage] = React.useState('');
   const [open, setOpen] = React.useState(false);
+  const navigate = useNavigate()
+  const { userLogin } = useUserAuthenticate()
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -47,17 +51,40 @@ export default function SignInCard() {
     setOpen(false);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    if (emailError || passwordError) {
-      event.preventDefault();
-      return;
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    try {
+      event.preventDefault()
+      const data = new FormData(event.currentTarget)
+
+      let remember_me = false
+      if(data.get('remember_me')) {
+        remember_me = true
+      }
+
+      const payload = {
+        email: data.get('email'),
+        password: data.get('password'),
+        remember_me: remember_me,
+      }
+      await userLogin(payload)
+      navigate("/")
+    } catch (error) {
+      console.error(error)
     }
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+  }
+
+  // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  //   if (emailError || passwordError) {
+  //     event.preventDefault();
+  //     return;
+  //   }
+  //   const data = new FormData(event.currentTarget);
+  //   console.log({
+  //     email: data.get('email'),
+  //     password: data.get('password'),
+  //   });
+  // };
 
   const validateInputs = () => {
     const email = document.getElementById('email') as HTMLInputElement;
@@ -84,7 +111,7 @@ export default function SignInCard() {
     }
 
     return isValid;
-  };
+  }
 
   return (
     <Card variant="outlined">
