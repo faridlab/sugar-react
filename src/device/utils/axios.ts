@@ -1,7 +1,8 @@
+import { ENDPOINT_API_URL } from '../../data/constants';
 import axios, { AxiosRequestConfig, RawAxiosRequestHeaders } from 'axios'
 
 const api = axios.create({
-  baseURL: process.env.ENDPOINT_API_URL,
+  baseURL: ENDPOINT_API_URL,
   timeout: 120 * 1000
 })
 
