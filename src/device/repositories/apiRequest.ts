@@ -25,7 +25,7 @@ export async function put ({ url, data, params = {}, headers = {}, config = {} }
 }
 
 export async function update ({ url, data, params = {}, headers = {}, config = {} }: RequestDataType) {
-  var token = await localStorage.getItem('authorization_token')
+  var token = await localStorage.getItem('bearer_token')
 
   if (!Array.isArray(data)) {
     data._method = 'PUT'

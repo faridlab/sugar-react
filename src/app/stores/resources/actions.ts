@@ -14,7 +14,7 @@ import {
 import { RequestType, RequestDataType } from '@device/utils/axios'
 
 export const fetch = createAsyncThunk('resource/fetch', async ({ url, params, headers = {}, config = {} }: RequestType) => {
-  const token = getCookie('authorization_token')
+  const token = getCookie('bearer_token')
   if (token) {
     headers = { Authorization: `Bearer ${token}`, ...headers }
   }
@@ -24,7 +24,7 @@ export const fetch = createAsyncThunk('resource/fetch', async ({ url, params, he
 })
 
 export const create = createAsyncThunk('resource/create', async ({ url, data, params = {}, headers = {}, config = {} }: RequestDataType) => {
-  const token = getCookie('authorization_token')
+  const token = getCookie('bearer_token')
   if (token) {
     headers = { Authorization: `Bearer ${token}`, ...headers }
   }
@@ -34,7 +34,7 @@ export const create = createAsyncThunk('resource/create', async ({ url, data, pa
 })
 
 export const update = createAsyncThunk('resource/update', async ({ url, data, params = {}, headers = {}, config = {} }: RequestDataType) => {
-  const token = getCookie('authorization_token')
+  const token = getCookie('bearer_token')
   if (token) {
     headers = { Authorization: `Bearer ${token}`, ...headers }
   }
@@ -44,7 +44,7 @@ export const update = createAsyncThunk('resource/update', async ({ url, data, pa
 })
 
 export const detail = createAsyncThunk('resource/detail', async ({ url, params, headers = {}, config = {} }: RequestType) => {
-  const token = getCookie('authorization_token')
+  const token = getCookie('bearer_token')
   if (token) {
     headers = { Authorization: `Bearer ${token}`, ...headers }
   }
@@ -54,7 +54,7 @@ export const detail = createAsyncThunk('resource/detail', async ({ url, params, 
 })
 
 export const patch = createAsyncThunk('resource/patch', async ({ url, data, params = {}, headers = {}, config = {} }: RequestDataType) => {
-  const token = getCookie('authorization_token')
+  const token = getCookie('bearer_token')
   if (token) {
     headers = { Authorization: `Bearer ${token}`, ...headers }
   }
@@ -64,7 +64,7 @@ export const patch = createAsyncThunk('resource/patch', async ({ url, data, para
 })
 
 export const trash = createAsyncThunk('resource/trash', async ({ url, params, headers = {}, config = {} }: RequestType) => {
-  const token = getCookie('authorization_token')
+  const token = getCookie('bearer_token')
   if (token) {
     headers = { Authorization: `Bearer ${token}`, ...headers }
   }
@@ -74,7 +74,7 @@ export const trash = createAsyncThunk('resource/trash', async ({ url, params, he
 })
 
 export const trashed = createAsyncThunk('resource/trashed', async ({ url, params, headers = {}, config = {} }: RequestType) => {
-  const token = getCookie('authorization_token')
+  const token = getCookie('bearer_token')
   if (token) {
     headers = { Authorization: `Bearer ${token}`, ...headers }
   }
@@ -87,7 +87,7 @@ export const trashed = createAsyncThunk('resource/trashed', async ({ url, params
 // Destroy Collection by selected Ids /collection/selected --params selected=[1,2,3]
 // Destroy all Models in Collection /collection/all
 export const destroy = createAsyncThunk('resource/destroy', async ({ url, data, params, headers = {}, config = {} }: RequestDataType) => {
-  const token = getCookie('authorization_token')
+  const token = getCookie('bearer_token')
   if (token) {
     headers = { Authorization: `Bearer ${token}`, ...headers }
   }
@@ -99,7 +99,7 @@ export const destroy = createAsyncThunk('resource/destroy', async ({ url, data, 
 // Delete Collection by selected Ids /collection/selected/delete --params ids=[1,2,3]
 // Delete all Models in Collection /collection/all/delete
 export const hardDelete = createAsyncThunk('resource/hardDelete', async ({ url, data, params, headers = {}, config = {} }: RequestDataType) => {
-  const token = getCookie('authorization_token')
+  const token = getCookie('bearer_token')
   if (token) {
     headers = { Authorization: `Bearer ${token}`, ...headers }
   }
@@ -112,7 +112,7 @@ export const hardDelete = createAsyncThunk('resource/hardDelete', async ({ url, 
 // Restore Collection by selected Ids /collection/selected/restore --params selected=[1,2,3]
 // Restore all Models in Collection /collection/all/restore
 export const restore = createAsyncThunk('resource/restore', async ({ url, data, params = {}, headers = {}, config = {} }: RequestDataType) => {
-  const token = getCookie('authorization_token')
+  const token = getCookie('bearer_token')
   if (token) {
     headers = { Authorization: `Bearer ${token}`, ...headers }
   }

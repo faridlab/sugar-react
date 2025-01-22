@@ -28,13 +28,13 @@ function useUserAuthenticate() {
   const dispatch = useAppDispatch()
   const {
     user,
-    authorization_token
+    bearer_token
   } = useAppSelector(selectResource)
 
   useEffect(() => {
-    if(!authorization_token) return
+    if(!bearer_token) return
     setLoggedIn(true)
-  }, [authorization_token])
+  }, [bearer_token])
 
   const [ submitUserLogin, response ] = usePostMutation()
 
@@ -59,7 +59,7 @@ function useUserAuthenticate() {
   const checkUserToken = async () => {
     const promise = new Promise((resolve) => {
       dispatch(checkToken())
-      if(authorization_token) {
+      if(bearer_token) {
         setLoggedIn(true)
       }
       resolve(true)
@@ -74,7 +74,7 @@ function useUserAuthenticate() {
 
   return {
     user,
-    authorization_token,
+    bearer_token,
     isLoggedIn,
     userLogin,
     logout,

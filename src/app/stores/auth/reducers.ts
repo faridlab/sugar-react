@@ -8,12 +8,12 @@ import {
 
 export type InitState = {
   user: Record<string, any> | null,
-  authorization_token: string | null // NOTE: should null option type will be removed in the future?
+  bearer_token: string | null // NOTE: should null option type will be removed in the future?
 }
 
 const initialState: InitState = {
   user: null,
-  authorization_token: null
+  bearer_token: null
 }
 
 export const authSlice = createSlice({
@@ -21,8 +21,8 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     setToken: (state, action: PayloadAction<string>) => {
-      state.authorization_token = action.payload
-      setCookie('authorization_token', action.payload)
+      state.bearer_token = action.payload
+      setCookie('bearer_token', action.payload)
     },
     setUser: (state, action: PayloadAction<Record<string, any>>) => {
       state.user = action.payload
@@ -33,21 +33,21 @@ export const authSlice = createSlice({
       removeCookie('user')
     },
     removeToken: (state) => {
-      state.authorization_token = null
-      removeCookie('authorization_token')
+      state.bearer_token = null
+      removeCookie('bearer_token')
     },
     userLogout: (state) => {
       // TODO: this should call dispatch removeUser and removeToken
       state.user = null
-      state.authorization_token = null
+      state.bearer_token = null
       removeCookie('user')
-      removeCookie('authorization_token')
+      removeCookie('bearer_token')
     },
     checkToken: (state) => {
-      if(!hasCookie('authorization_token')) return
-      const token = getCookie('authorization_token')
+      if(!hasCookie('bearer_token')) return
+      const token = getCookie('bearer_token')
       const user = getCookie('user')
-      state.authorization_token = (token as string)
+      state.bearer_token = (token as string)
       state.user = JSON.parse((user as string))
     },
   },
