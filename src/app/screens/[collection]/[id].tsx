@@ -12,7 +12,7 @@ import Toolbar from '@mui/material/Toolbar'
 import { useDialog } from '@app/hooks'
 import { RequestDataType } from '@device/utils/axios'
 // import { NextPage } from 'next'
-import useQuery from '@/app/hooks/useQuery'
+import useQuery from '@app/hooks/useQuery'
 
 const CollectionDetailPage = () => {
   // const router = useRouter()

@@ -18,7 +18,7 @@ import { useDialog } from '@app/hooks'
 import useFilterParams from '@app/hooks/useFilterParams'
 import { Box, Stack, Button, IconButton } from '@mui/material'
 import useQuery from '@app/hooks/useQuery'
-import useDestruction from '@/app/hooks/useDestruction'
+import useDestruction from '@app/hooks/useDestruction'
 
 const CollectionPage = () => {
   // const router = useRouter()

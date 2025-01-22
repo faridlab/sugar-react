@@ -23,7 +23,7 @@ import { DatagridPresenter } from '@app/components/presenter'
 import { Params } from '@component/presenter/datagrid'
 import { useDialog } from '@app/hooks'
 import { RequestDataType } from '@device/utils/axios'
-import { params } from '@/data/repositories/resources'
+import { params } from '@data/repositories/resources'
 
 const CollectionTrashPage = () => {
   // const router = useRouter()
