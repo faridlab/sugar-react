@@ -1,14 +1,15 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { RequestType, RequestDataType } from '@device/utils/axios'
 import { getCookie } from '../../utils/cookies'
+import { ENDPOINT_API_URL } from '../../../data/constants'
 
-const baseUrl = process.env.ENDPOINT_API_URL
+const baseUrl = ENDPOINT_API_URL
 export const apiRequest = createApi({
   reducerPath: 'apiRequest',
   baseQuery: fetchBaseQuery({
     baseUrl,
     prepareHeaders: (headers, { getState }) => {
-      const token = getCookie('authorization_token')
+      const token = getCookie('bearer_token')
       if (token) {
         headers.set('authorization', `Bearer ${token}`)
       }
