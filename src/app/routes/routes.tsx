@@ -1,13 +1,13 @@
 import { createBrowserRouter } from 'react-router';
-import DashboardLayout from "../../shared/layouts/DashboardLayout";
 import SignInScreen, {LoaderData} from "../screens/SignInScreen";
 import SignUpScreen from "../screens/SignUpScreen";
+import DashboardScreen from '../screens/DashboardScreen';
 
 const routers = createBrowserRouter([
   {
     path: "/",
     index: true,
-    element: <DashboardLayout />,
+    element: <DashboardScreen />,
   },
   {
     path: "/sign-in",
