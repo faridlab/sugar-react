@@ -1,4 +1,4 @@
-import Province from "@domain/entities/province";
+import Province from "../../../domain/entities/province";
 
 const data: Partial<Province> = {
   id: '',

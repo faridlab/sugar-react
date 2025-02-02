@@ -3,7 +3,7 @@ import MenuItem from '@mui/material/MenuItem'
 import { PersonAdd, Settings, Logout, Person } from '@mui/icons-material'
 import { Divider, ListItemIcon } from '@mui/material'
 import { useDialog } from '@app/hooks'
-import useUserAuthenticate from '@app/hooks/userAuthenticate'
+import useUserAuthenticate from '@/app/hooks/useAuthenticate'
 // import { useRouter } from 'next/router'
 
 interface MenuProps {

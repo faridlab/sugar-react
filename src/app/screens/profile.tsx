@@ -2,7 +2,7 @@ import Layout from '@app/layouts/layout'
 import { Box, Button, Stack, Toolbar, Typography } from '@mui/material'
 import { FormEvent, ReactElement, useEffect, useState } from 'react'
 import LockIcon from '@mui/icons-material/Lock'
-import useUserAuthenticate from '@app/hooks/userAuthenticate'
+import useUserAuthenticate from '@/app/hooks/useAuthenticate'
 import {
   useUpdateMutation
 } from '@app/services/api/apiRequest'

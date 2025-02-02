@@ -1,14 +1,14 @@
-import * as resources from '@data/repositories/resources'
-import * as countries from '@data/repositories/countries'
-import * as provinces from '@data/repositories/provinces'
-import * as cities from '@data/repositories/cities'
-import * as profile from '@data/repositories/profile'
-import * as users from '@data/repositories/users'
-import * as roles from '@data/repositories/roles'
-import * as permissions from '@data/repositories/permissions'
+import * as resources from './resources'
+import * as countries from './countries'
+import * as provinces from './provinces'
+import * as cities from './cities'
+import * as profile from './profile'
+import * as users from './users'
+import * as roles from './roles'
+import * as permissions from './permissions'
 
-import * as banners from '@data/repositories/banners'
-import * as contents from '@data/repositories/contents'
+import * as banners from './banners'
+import * as contents from './contents'
 
 export {
   resources,

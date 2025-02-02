@@ -1,7 +1,7 @@
-import data from '@domain/repositories/resources/data'
-import columns from '@domain/repositories/resources/columns'
-import forms from '@domain/repositories/resources/forms'
-import validation from '@domain/repositories/resources/validation'
+import data from './data'
+import columns from './columns'
+import forms from './forms'
+import validation from './validation'
 
 export {
   data,

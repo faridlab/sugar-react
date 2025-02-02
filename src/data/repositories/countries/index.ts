@@ -1,10 +1,10 @@
 import {
   validation
-} from '@domain/repositories/resources'
+} from '../../../domain/repositories/resources'
 
-import columns from '@data/repositories/countries/columns'
-import forms from '@data/repositories/countries/forms'
-import data from '@data/repositories/countries/data'
+import columns from './columns'
+import forms from './forms'
+import data from './data'
 
 const params = {}
 

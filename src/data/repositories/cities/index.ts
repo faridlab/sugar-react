@@ -1,10 +1,10 @@
 import {
   validation
-} from '@domain/repositories/resources'
+} from '../../../domain/repositories/resources'
 
-import columns from '@data/repositories/cities/columns'
-import forms from '@data/repositories/cities/forms'
-import data from '@data/repositories/cities/data'
+import columns from './columns'
+import forms from './forms'
+import data from './data'
 
 const params = {
   relationship: ['country', 'province'],

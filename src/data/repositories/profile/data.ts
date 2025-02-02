@@ -1,5 +1,5 @@
-import Users from "@domain/entities/users";
-import { UserStatus } from '@domain/entities/enums'
+import Users from "../../../domain/entities/users";
+import { UserStatus } from '../../../domain/entities/enums'
 
 const data: Users = {
   first_name: '',

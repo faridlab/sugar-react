@@ -1,4 +1,4 @@
-import Country from "@domain/entities/country";
+import Country from "../../../domain/entities/country";
 
 const data: Country = {
   id: '',

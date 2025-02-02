@@ -1,10 +1,10 @@
 import {
   validation
-} from '@domain/repositories/resources'
+} from '../../../domain/repositories/resources'
 
-import columns from '@data/repositories/users/columns'
-import forms from '@data/repositories/users/forms'
-import data from '@data/repositories/users/data'
+import columns from './columns'
+import forms from './forms'
+import data from './data'
 
 const params = {
   relationship: ['roles.role'],

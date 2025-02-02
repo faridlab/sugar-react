@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import MuiCard from '@mui/material/Card';
-import useUserAuthenticate from '../../hooks/userAuthenticate'
+import useUserAuthenticate from '../../hooks/useAuthenticate'
 import Checkbox from '@mui/material/Checkbox';
 import Divider from '@mui/material/Divider';
 import FormLabel from '@mui/material/FormLabel';

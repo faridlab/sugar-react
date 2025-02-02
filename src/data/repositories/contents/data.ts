@@ -1,4 +1,4 @@
-import Content from "@domain/entities/content";
+import Content from "../../../domain/entities/content";
 
 const data: Content = {
   id: '',

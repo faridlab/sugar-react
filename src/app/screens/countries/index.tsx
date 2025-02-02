@@ -14,7 +14,7 @@ import {
 import { useDeleteMutation } from '@app/services/api/apiRequest'
 import * as dataRepositories from '@data/repositories'
 import { useQueryMutation } from '@app/services/api/apiRequest'
-import { DatagridPresenter } from '@app/components/presenter'
+import { DatagridPresenter } from '@/app/presenters/data'
 import { useDialog } from '@app/hooks'
 import { RequestDataType } from '@device/utils/axios'
 import useFilterParams from '@app/hooks/useFilterParams'

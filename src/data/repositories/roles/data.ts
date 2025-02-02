@@ -1,4 +1,4 @@
-import Roles from "@domain/entities/roles"
+import Roles from "../../../domain/entities/roles"
 
 const data: Roles = {
   name: '',
