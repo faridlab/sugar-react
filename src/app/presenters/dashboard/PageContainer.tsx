@@ -57,7 +57,6 @@ export default function PageContainer(props: React.PropsWithChildren) {
       <Box
         sx={{
           display: 'flex',
-          mb: 1,
           gap: 1,
           flexDirection: { xs: 'column', sm: 'row' },
           alignItems: { xs: 'start', sm: 'center' },
@@ -151,9 +150,9 @@ export default function PageContainer(props: React.PropsWithChildren) {
         </Stack>
       </Box>
 
-      <Grid container spacing={2} sx={{mt: 4}}>
+      <Grid container spacing={2} sx={{mt: 2}}>
         <Grid size={4}>
-          <FormControl fullWidth sx={{ m: 1 }}>
+          <FormControl fullWidth sx={{ my: 1 }}>
             <InputLabel htmlFor="outlined-adornment-amount">Search</InputLabel>
             <OutlinedInput
               id="outlined-adornment-amount"
