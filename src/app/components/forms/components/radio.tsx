@@ -7,7 +7,7 @@ import FormLabel from '@mui/material/FormLabel'
 import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 
-import { FormProps, FormContext } from '@component/forms'
+import { FormProps, FormContext } from '../../forms'
 
 const FormRadio: FunctionComponent<FormProps> = (formProps: FormProps) => {
   const { data, setData } = useContext(FormContext)
