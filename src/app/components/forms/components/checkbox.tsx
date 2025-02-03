@@ -6,7 +6,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import FormControl from '@mui/material/FormControl'
 import FormLabel from '@mui/material/FormLabel'
 
-import { FormProps, FormContext } from '@component/forms'
+import { FormProps, FormContext } from '../../forms'
 
 const FormCheckbox: FunctionComponent<FormProps> = (formProps: FormProps) => {
   const { data, setData } = useContext(FormContext)
