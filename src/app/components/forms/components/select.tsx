@@ -6,7 +6,7 @@ import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
-import { FormProps, FormContext } from '@component/forms'
+import { FormProps, FormContext } from '../../forms'
 
 const FormSelect: FunctionComponent<FormProps> = (formProps: FormProps) => {
   const { data, setData } = useContext(FormContext)
