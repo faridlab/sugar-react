@@ -4,7 +4,7 @@ import SignUpScreen from "../screens/SignUpScreen";
 import DashboardScreen from '../screens/DashboardScreen';
 import AuthenticatedRoutes from '../presenters/auth/Authenticated';
 import AuthenticatedToDashboard from '../presenters/auth/AuthenticatedToDashboard';
-import ResourcesScreen from '../screens/resources';
+import ResourcesIndexScreen, { ResourcesDetailScreen } from '../screens/resources';
 import DashboardLayout from '../layouts/DashboardLayout';
 
 const routers = createBrowserRouter([
@@ -37,8 +37,12 @@ const routers = createBrowserRouter([
           },
           {
             path: "/:collection",
-            element: <ResourcesScreen />,
+            element: <ResourcesIndexScreen />,
             loader: LoaderData,
+          },
+          {
+            path: "/:collection/:id",
+            element: <ResourcesDetailScreen />,
           },
         ]
       },
