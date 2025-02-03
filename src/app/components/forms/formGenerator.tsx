@@ -1,9 +1,9 @@
 import * as React from 'react'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
-import { FormLayoutProps, FormProps, FormContext } from '@component/forms'
+import { FormLayoutProps, FormProps, FormContext } from '../forms'
 import { FunctionComponent, useEffect, useState } from 'react'
-import * as FormComponents from '@component/forms/components'
+import * as FormComponents from './components'
 
 export interface FormGeneratorProps {
   forms: FormLayoutProps;
@@ -72,7 +72,7 @@ const FormGenerator: FunctionComponent<FormGeneratorProps> = ({readOnly = false,
           e.preventDefault();
           if (onSubmit) onSubmit(e);
         }}
-        sx={{ flexGrow: 1, m: 2 }}
+        sx={{ flexGrow: 1, my: 2 }}
       >
         <FormLayoutGenerator
           forms={forms}
