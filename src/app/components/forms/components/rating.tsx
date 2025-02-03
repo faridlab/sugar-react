@@ -3,7 +3,7 @@ import { FunctionComponent, useContext } from 'react'
 import FormControl from '@mui/material/FormControl'
 import FormLabel from '@mui/material/FormLabel'
 import Rating from '@mui/material/Rating'
-import { FormProps, FormContext } from '@component/forms'
+import { FormProps, FormContext } from '../../forms'
 
 const FormRating: FunctionComponent<FormProps> = (formProps: FormProps) => {
   const { data, setData } = useContext(FormContext)
