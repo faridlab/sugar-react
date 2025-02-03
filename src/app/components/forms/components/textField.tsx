@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { FunctionComponent, useContext } from 'react'
 import TextField from '@mui/material/TextField'
-import { FormProps, FormContext } from '@component/forms'
+import { FormProps, FormContext } from '../../forms'
 
 const FormTextField: FunctionComponent<FormProps> = (formProps: FormProps) => {
   const { data, setData } = useContext(FormContext)
