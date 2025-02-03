@@ -1,11 +1,11 @@
-import TextField from '@component/forms/components/textField'
-import Checkbox from '@component/forms/components/checkbox'
-import Radio from '@component/forms/components/radio'
-import Rating from '@component/forms/components/rating'
-import Switch from '@component/forms/components/switch'
-import Slider from '@component/forms/components/slider'
-import Select from '@component/forms/components/select'
-import Reference from '@component/forms/components/reference'
+import TextField from './textField'
+import Checkbox from './checkbox'
+import Radio from './radio'
+import Rating from './rating'
+import Switch from './switch'
+import Slider from './slider'
+import Select from './select'
+import Reference from './reference'
 
 export {
   TextField,

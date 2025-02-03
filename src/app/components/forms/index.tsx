@@ -1,13 +1,13 @@
 import { FunctionComponent } from "react"
-import FormGenerator from '@component/forms/formGenerator'
-import TextField from '@component/forms/components/textField'
-import Checkbox from '@component/forms/components/checkbox'
-import Radio from '@component/forms/components/radio'
-import Rating from '@component/forms/components/rating'
-import Switch from '@component/forms/components/switch'
-import Slider from '@component/forms/components/slider'
-import Select from '@component/forms/components/select'
-import FormContext from '@component/forms/contexts'
+import FormGenerator from './formGenerator'
+import TextField from './components/textField'
+import Checkbox from './components/checkbox'
+import Radio from './components/radio'
+import Rating from './components/rating'
+import Switch from './components/switch'
+import Slider from './components/slider'
+import Select from './components/select'
+import FormContext from './contexts'
 
 export interface FormPropsComponent {
   create?: FunctionComponent;
