@@ -1,4 +1,6 @@
-const banners = {
+const banners: Record<string, any> = {
+  singular: 'Banner',
+  plural: 'Banners',
   index: {
     title: 'Banners'
   },

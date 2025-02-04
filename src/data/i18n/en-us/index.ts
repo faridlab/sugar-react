@@ -7,7 +7,7 @@ import provinces from "./provinces"
 import terms from "./terms"
 import users from "./users"
 
-const enUs = {
+const enUs: Record<string, any> = {
   failed: 'Action failed',
   success: 'Action was successful',
   buttons: {

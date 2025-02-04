@@ -1,4 +1,6 @@
-const terms = {
+const terms: Record<string, any> = {
+  singular: 'Term',
+  plural: 'Term',
   index: {
     title: 'Terms & Conditions'
   },

@@ -1,4 +1,6 @@
-const faq = {
+const faq: Record<string, any> = {
+  singular: 'FAQ',
+  plural: 'FAQ',
   index: {
     title: 'F.A.Q'
   },

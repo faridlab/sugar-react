@@ -1,7 +1,6 @@
 import enUS from './en-us'
 
-const i18n = {
-  'en-US': enUS
+export default enUS
+export {
+  enUS
 }
-
-export default i18n

@@ -1,4 +1,4 @@
-const auth = {
+const auth: Record<string, any> = {
   network_error: 'Network error. Please check your internet connection',
   submit: 'Submit',
   home: 'Home',

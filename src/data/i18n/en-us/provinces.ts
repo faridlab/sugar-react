@@ -1,4 +1,6 @@
-const provinces = {
+const provinces: Record<string, any> = {
+  singular: 'Province',
+  plural: 'Provinces',
   index: {
     title: 'Provinces'
   },
