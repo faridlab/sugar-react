@@ -18,7 +18,7 @@ import HomeRoundedIcon from '@mui/icons-material/HomeRounded'
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded'
 import DeleteIcon from '@mui/icons-material/Delete'
 
-import { useState, MouseEvent, useContext, Component } from 'react'
+import { useState, MouseEvent, useContext, Component, memo } from 'react'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import Divider from '@mui/material/Divider'
@@ -41,7 +41,7 @@ interface BreadcrumbProps {
   links: BreadcrumbLink[];
 }
 
-function BreadcrumbGenerator({ links }: BreadcrumbProps) {
+const BreadcrumbGenerator = memo(({ links }: BreadcrumbProps) => {
   if(!links) return <></>
 
   const rest = links.slice(0, -1)
@@ -73,7 +73,7 @@ function BreadcrumbGenerator({ links }: BreadcrumbProps) {
 
   </Breadcrumbs>
   )
-}
+})
 
 export default function PageContainer(props: React.PropsWithChildren) {
   const { children } = props
