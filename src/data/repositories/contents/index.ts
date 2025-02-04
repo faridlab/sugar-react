@@ -4,12 +4,13 @@ import {
 
 import columns from './columns'
 import forms from './forms'
-import data from './data'
+import data, { labelKey } from './data'
 
 const params = {}
 
 export {
   data,
+  labelKey,
   columns,
   forms,
   validation,

@@ -4,5 +4,5 @@ const data: Roles = {
   name: '',
   guard_name: 'web'
 }
-
+export const labelKey: string = 'name'
 export default data

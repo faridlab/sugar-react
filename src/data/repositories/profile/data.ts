@@ -9,5 +9,5 @@ const data: Users = {
   status: UserStatus.inactive,
   dob: ''
 }
-
+export const labelKey: string = 'username'
 export default data

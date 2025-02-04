@@ -10,5 +10,5 @@ const data: Content = {
   publish_type: 'immediately',
   publish_date: ''
 }
-
+export const labelKey: string = 'title'
 export default data

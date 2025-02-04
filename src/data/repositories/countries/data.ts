@@ -6,5 +6,5 @@ const data: Country = {
   name: '',
   phonecode: '',
 }
-
+export const labelKey: string = 'name'
 export default data

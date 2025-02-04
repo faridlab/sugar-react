@@ -8,5 +8,5 @@ const data: Users = {
   email: '',
   status: UserStatus.inactive
 }
-
+export const labelKey: string = 'username'
 export default data

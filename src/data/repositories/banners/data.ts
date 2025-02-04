@@ -10,5 +10,5 @@ const data: Banner = {
   order: 0,
   banner: ''
 }
-
+export const labelKey: string = 'title'
 export default data

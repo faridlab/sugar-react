@@ -5,5 +5,5 @@ const data: Partial<Province> = {
   name: '',
   country_id: '',
 }
-
+export const labelKey: string = 'name'
 export default data

@@ -5,5 +5,5 @@ const data: Partial<City> = {
   country_id: '',
   province_id: '',
 }
-
+export const labelKey: string = 'name'
 export default data
