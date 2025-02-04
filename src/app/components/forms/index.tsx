@@ -7,7 +7,7 @@ import Rating from './components/rating'
 import Switch from './components/switch'
 import Slider from './components/slider'
 import Select from './components/select'
-import FormContext from './contexts'
+import FormContext from '../../contexts'
 
 export interface FormPropsComponent {
   create?: FunctionComponent;
