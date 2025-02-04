@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 // import { useRouter } from 'next/router'
 import * as dataRepositories from '../../../data/repositories'
 import { useUpdateMutation, useDeleteMutation } from '../../services/api/apiRequest'
@@ -12,8 +12,15 @@ import { RequestDataType } from '../../../device/utils/axios'
 import useQuery from '../../hooks/useQuery'
 import { useNavigate, useParams } from 'react-router'
 
+import language from '../../../data/i18n'
+import { ResourceContext } from '../../contexts'
+import { BreadcrumbLink } from '../../presenters/dashboard/PageContainer'
+
+const breadcrumbs: BreadcrumbLink[] = []
+
 const ResourcesDetailScreen = () => {
   const navigate = useNavigate()
+  const { ctx, setContext } = useContext(ResourceContext)
   const { collection, id, editable } = useParams()
 
   const url = `/${collection}/${id}`
@@ -33,6 +40,7 @@ const ResourcesDetailScreen = () => {
   } = useQuery({collection: `${collection}/${id}`, openDialog})
 
   useEffect(() => {
+    if(!collection) return
     const { resources } = dataRepositories // as default
     const forms = (dataRepositories as any)[collection as string]?.forms || resources.forms
     const data = (dataRepositories as any)[collection as string]?.data || resources.data
@@ -44,12 +52,29 @@ const ResourcesDetailScreen = () => {
 
     fetchData()
 
+    breadcrumbs.push({
+      label: language[collection].plural,
+      link: `/${collection}`
+    })
+
   }, [collection, id])
 
   useEffect(() => {
     if(!response) return
+    if(!collection) return
+
     setData(response?.data)
-  }, [response])
+    const { data } = response
+    const labelKey = (dataRepositories as any)[collection as string]?.labelKey
+
+    const pageTitle: string = language[collection].singular
+    breadcrumbs.push({
+      label: data[labelKey],
+      link: `/${collection}/${id}`
+    })
+
+    setContext({...ctx, breadcrumbs, pageTitle})
+  }, [response, collection])
 
   const onToggleEdit = async () => {
     setReadOnly(!readOnly)

@@ -1,58 +1,96 @@
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import { Breadcrumbs, IconButton, Link, MenuItem, Menu, Stack, FormControl, Select, InputLabel, InputAdornment, OutlinedInput } from '@mui/material';
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import {
+  Breadcrumbs,
+  IconButton,
+  Link,
+  MenuItem,
+  Menu,
+  Stack,
+  FormControl,
+  Select,
+  InputLabel,
+  InputAdornment,
+  OutlinedInput
+} from '@mui/material'
 
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded'
+import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded'
 import DeleteIcon from '@mui/icons-material/Delete'
 
-import { useState, MouseEvent } from 'react';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Divider from '@mui/material/Divider';
-import SearchIcon from '@mui/icons-material/Search';
+import { useState, MouseEvent, useContext, Component } from 'react'
+import MoreVertIcon from '@mui/icons-material/MoreVert'
+import ListItemIcon from '@mui/material/ListItemIcon'
+import Divider from '@mui/material/Divider'
+import SearchIcon from '@mui/icons-material/Search'
 
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import UploadIcon from '@mui/icons-material/Upload';
-import DownloadIcon from '@mui/icons-material/Download';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
-import Grid from '@mui/material/Grid2';
+import AddCircleIcon from '@mui/icons-material/AddCircle'
+import UploadIcon from '@mui/icons-material/Upload'
+import DownloadIcon from '@mui/icons-material/Download'
+import BarChartIcon from '@mui/icons-material/BarChart'
+import FilterAltIcon from '@mui/icons-material/FilterAlt'
+import Grid from '@mui/material/Grid2'
+import { ResourceContext } from '../../contexts'
+
+export interface BreadcrumbLink {
+  label: string;
+  link: string;
+  icon?: Component;
+}
+interface BreadcrumbProps {
+  links: BreadcrumbLink[];
+}
+
+function BreadcrumbGenerator({ links }: BreadcrumbProps) {
+  if(!links) return <></>
+
+  const rest = links.slice(0, -1)
+  let last = links.at(-1)
+
+  return (
+  <Breadcrumbs
+    maxItems={2}
+    separator={<ChevronRightRoundedIcon fontSize="small" sx={{mx: 0}} />}
+    aria-label="breadcrumb"
+    sx={{fontSize: 'small'}}
+  >
+    <Link href="/" underline="hover"  color="inherit">
+      <HomeRoundedIcon fontSize='small' />
+    </Link>
+
+    {rest.map((item , key) =>
+      <Link
+        key={key}
+        underline="none"
+        color="inherit"
+        sx={{fontSize: 'small'}}
+        href={item.link}
+      >
+      {item.label}
+    </Link>
+    )}
+    {last && <Typography sx={{fontSize: 'small'}}> {last.label}</Typography>}
+
+  </Breadcrumbs>
+  )
+}
 
 export default function PageContainer(props: React.PropsWithChildren) {
   const { children } = props
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
+  const { ctx, setContext } = useContext(ResourceContext)
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+  const open = Boolean(anchorEl)
   const handleClick = (event: MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
+    setAnchorEl(event.currentTarget)
+  }
   const handleClose = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
 
   return (
     <Box component="main" sx={{ flexGrow: 1, p: 2 }}>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <Breadcrumbs
-          separator={<ChevronRightRoundedIcon fontSize="small" sx={{mx: 0}} />}
-          aria-label="breadcrumb"
-          sx={{fontSize: 'small'}}
-        >
-          <Link underline="hover" key="1" color="inherit">
-            <HomeRoundedIcon fontSize='small' />
-          </Link>
-          <Link
-            underline="hover"
-            key="2"
-            color="inherit"
-            sx={{fontSize: 'small'}}
-          >
-            Core
-          </Link>
-          <Typography key="3" sx={{fontSize: 'small'}}>
-            Breadcrumb
-          </Typography>
-        </Breadcrumbs>
+        <BreadcrumbGenerator links={ctx.breadcrumbs} />
       </Box>
       <Box
         sx={{
@@ -65,7 +103,7 @@ export default function PageContainer(props: React.PropsWithChildren) {
         }}
       >
         <Typography variant="h5" component="h2">
-          Orders
+          {ctx.pageTitle}
         </Typography>
         <Stack
           direction="row"
