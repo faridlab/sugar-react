@@ -14,14 +14,16 @@ import { useNavigate, useParams } from 'react-router'
 
 import language from '../../../data/i18n'
 import { ResourceContext } from '../../contexts'
-import { BreadcrumbLink } from '../../presenters/dashboard/PageContainer'
+import { ResourcesProps } from './ResourcesIndex'
+import { BreadcrumbLink } from '@/app/presenters/resources/Breadcrumbs'
 
 const breadcrumbs: BreadcrumbLink[] = []
 
-const ResourcesDetailScreen = () => {
+const ResourcesDetailScreen = ({storeCollection} : ResourcesProps) => {
   const navigate = useNavigate()
   const { ctx, setContext } = useContext(ResourceContext)
-  const { collection, id, editable } = useParams()
+  let { collection, id, editable } = useParams()
+  if(!!storeCollection) collection = storeCollection
 
   const url = `/${collection}/${id}`
   const [ forms, setForms ] = useState<FormLayoutProps>([])

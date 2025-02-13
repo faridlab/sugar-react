@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo, useState } from 'react'
+import { PropsWithChildren, useContext, useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams } from "react-router"
 import gridActions from '../../../data/repositories/datagrid/actions'
 
@@ -15,14 +15,20 @@ import useDestruction from '../../hooks/useDestruction'
 
 import language from '../../../data/i18n'
 import { ResourceContext } from '../../contexts'
-import { BreadcrumbLink } from '../../presenters/dashboard/PageContainer'
+import { BreadcrumbLink } from '@/app/presenters/resources/Breadcrumbs'
 
 const breadcrumbs: BreadcrumbLink[] = []
 
-const ResourcesIndexScreen = () => {
+export interface ResourcesProps extends PropsWithChildren {
+  storeCollection?: string;
+}
+
+const ResourcesIndexScreen = ({storeCollection} : ResourcesProps) => {
   const navigate = useNavigate()
   const { ctx, setContext } = useContext(ResourceContext)
-  const { collection, delete_id } = useParams()
+  let { collection, delete_id } = useParams()
+  if(!!storeCollection) collection = storeCollection
+
   const [ columns, setColumns ] = useState<GridColDef[]>([])
   // NOTE: i don't like this approach use ready state, please find ahother cool way
   const [ ready, setReady ] = useState<boolean>(false)
