@@ -1,10 +1,11 @@
 import Box from '@mui/material/Box'
 import CssBaseline from '@mui/material/CssBaseline'
-import PageContainer, { BreadcrumbLink } from '../presenters/dashboard/PageContainer'
+import PageContainer from '../presenters/dashboard/PageContainer'
 import DrawerMenu from '../presenters/dashboard/DrawerMenu'
 import { Outlet } from 'react-router'
 import { ResourceContext } from '../contexts'
 import { useState } from 'react'
+import { BreadcrumbLink } from '../presenters/resources/Breadcrumbs'
 
 interface ResourceContextData {
   ctx?: BreadcrumbLink[];
