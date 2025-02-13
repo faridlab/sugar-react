@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import CssBaseline from '@mui/material/CssBaseline';
 
-import SidemenuComponent from './sidemenu'
+// import SidemenuComponent from './sidemenu'
 import TopnavComponent from './topnavbar'
 
 import Drawer from '@mui/material/Drawer';
@@ -44,7 +44,7 @@ const DashboardLayout = ({ children, filterParams, title, ToolbarActions }: Filt
       >
         <Toolbar />
         <Box sx={{ overflow: 'auto' }}>
-          <SidemenuComponent />
+          {/* <SidemenuComponent /> */}
         </Box>
       </Drawer>
 
