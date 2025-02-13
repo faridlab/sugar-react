@@ -7,7 +7,7 @@ import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 
-import SidemenuComponent from './sidemenu'
+// import SidemenuComponent from './sidemenu'
 import TopnavComponent from './topnavbar'
 import { PropsWithChildren } from 'react'
 
@@ -72,7 +72,7 @@ const DashboardPage = ({ children }: PropsWithChildren) => {
               <ChevronLeftIcon />
             </IconButton>
           </Toolbar>
-          <SidemenuComponent />
+          {/* <SidemenuComponent /> */}
         </Drawer>
         <Box
           component="main"
